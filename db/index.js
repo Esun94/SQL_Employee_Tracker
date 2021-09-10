@@ -12,7 +12,15 @@ class DB {
       // CREATE SELECT STATMENT WITH THE FOLLOWING COLUMNS FROM THREE TABLES.
       // id, first_name, last_name FROM employee TABLE AND department name from department TABLE AND SELECT salary FROM role TABLE
       // YOUR NEED TO USE LEFT JOINS TO JOIN THREE TABLES
-      // "SELECT id, first_name, last_name FROM employee LEFT JOIN department ON department.employee_id = employee.id",
+      // TODO:
+       "SELECT e.id, e.first_name, e.last_name, d.name, r.salary FROM employee AS e LEFT JOIN role AS r LEFT JOIN department AS d ON e.role = d.id" 
+      //  "SELECT name FROM department",
+      //  "SELECT salary FROM role",
+      //  "LEFT JOIN department ON department.employee_id = employee.id AND LEFT JOIN ",
+
+
+
+
       // "SELECT department_name FROM department",
       // "SELECT salary FROM role",
       // "LEFT JOIN ON "
@@ -39,6 +47,8 @@ class DB {
   updateEmployeeRole(employeeId, roleId) {
     return this.connection.query(
       // TODO: YOUR CODE HERE
+      "UPDATE employee SET role_id = ? WHERE id = ?",
+      [employeeId, roleId]
 
     );
   }
