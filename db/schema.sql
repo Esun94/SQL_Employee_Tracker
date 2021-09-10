@@ -7,7 +7,7 @@ CREATE TABLE department (
   -- CREATE id, name COLUMNS
   -- MAKE id AS PRIMARY KEY
   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  department_name VARCHAR(30) NOT NULL
+  name VARCHAR(30) NOT NULL
 );
 
 CREATE TABLE role (
@@ -17,7 +17,7 @@ CREATE TABLE role (
   -- MAKE CONSTRAINT 'ON DELETE CASCADE' (WITHOUT QUOTES) ON THIS FOREIGN KEY
   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   title VARCHAR(30) NOT NULL,
-  salary DECIMAL(6, 2),
+  salary DECIMAL,
   department_id INT,
   FOREIGN KEY (department_id)
   REFERENCES department(id)
@@ -38,6 +38,6 @@ CREATE TABLE employee (
   REFERENCES role(id)
   ON DELETE CASCADE,
   FOREIGN KEY (manager_id)
-  REFERENCES manager(id)
+  REFERENCES employee(id)
   ON DELETE SET NULL
 );
