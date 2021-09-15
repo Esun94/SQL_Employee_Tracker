@@ -2,7 +2,7 @@
 
 ## Description
 
-An Employee Tracker in SQL controlled in the Terminal
+An Employee Tracker in SQL, controlled in Terminal.
 
 ----
 
@@ -21,6 +21,16 @@ An Employee Tracker in SQL controlled in the Terminal
 ----
 
 ## Usage
+
+User input in the console:
+
+Node Index.js
+
+SELECT with Enter key
+
+SCROLL with up and down arrow keys
+
+https://drive.google.com/file/d/1snHsacs0fxgJwrkecC9-dFzNQyYqlI1e/view
 
 
 ----
